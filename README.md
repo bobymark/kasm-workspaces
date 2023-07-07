@@ -82,7 +82,7 @@ docker run -id \
   -e KASM_PORT=8443 \
   -p 3001:3000 \
   -p 8443:8443 \
-  -v ${PWD}:/mnt" \
+  -v ${PWD}:/mnt \
   lscr.io/linuxserver/kasm:amd64-latest
 ```
 
