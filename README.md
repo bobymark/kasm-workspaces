@@ -66,7 +66,7 @@ docker run -id \
   -e KASM_PORT=443 \
   -p 3000:3000 \
   -p 443:443 \
-  -v ${PWD}:/mnt" \
+  -v ${PWD}:/mnt \
   lscr.io/linuxserver/kasm:arm64v8-latest
 ```  
 
