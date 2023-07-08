@@ -71,14 +71,15 @@ docker run -id \
 ```
 
 - kasm-user settings to add this user in sudoers groups https://kasmweb.com/docs/latest/how_to/running_as_root.html
--  Docker Exec Config (JSON)
+
+-  Docker Run Config Override (JSON)
   ```json
 {
   "hostname": "kasm",
   "privileged": true
 }
 ```
-
+-  Docker Exec Config (JSON)
 ```json
 {
 "first_launch": {
