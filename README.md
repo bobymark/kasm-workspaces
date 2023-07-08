@@ -83,7 +83,7 @@ docker run -id \
 {
 "first_launch": {
  "user":"root",
- "cmd":"bash -c 'apt-get update && apt-get install -y sudo && sudo depkg -i^Chome/kasm-user/Downloads/Lens-2023.5.310801-latest.amd64.deb && echo \"kasm-user ALL=(ALL) NOPASSWD: ALL\" >> /etc/sudoers'"
+ "cmd":"bash -c 'apt-get update && apt-get install -y sudo && echo \"kasm-user ALL=(ALL) NOPASSWD: ALL\" >> /etc/sudoers'"
 }
 }
 ```
