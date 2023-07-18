@@ -138,34 +138,32 @@ docker run --name sandbox --shm-size=4096m -v $PWD:/mnt -w /mnt -p 6901:6901 -e 
 ### DevOps tools
 ```bash
 apt update -y \
+&& apt install -y ansible tmux curl zip unzip jq telnet netcat-traditional net-tools dos2unix git vim nano iputils-ping golang-github-packer-community-winrmcp-dev python3-pip \
 && cd /root \
-&& apt install -y ansible tmux sudo curl zip unzip jq telnet netcat-traditional net-tools dos2unix git vim nano iputils-ping golang-github-packer-community-winrmcp-dev \
 && curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" \
 && chmod +x ./kubectl \
-&& mv ./kubectl /usr/bin/kubectl \
+&& mv ./kubectl /usr/local/bin/ \
 && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
 && chmod 700 get_helm.sh \
 && ./get_helm.sh \
-&& curl -# -LO -# https://github.com/weaveworks/eksctl/releases/download/v0.94.0-rc.0/eksctl_Linux_amd64.tar.gz \
+&& curl -# -LO https://github.com/weaveworks/eksctl/releases/download/v0.94.0-rc.0/eksctl_Linux_amd64.tar.gz \
 && tar -xzvf eksctl_Linux_amd64.tar.gz \
-&& mv eksctl /usr/local/bin \
+&& mv eksctl /usr/local/bin/ \
 && curl -# -LO https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_amd64.zip \
 && unzip terraform_1.4.6_linux_amd64.zip \
-&& mv terraform /usr/local/bin \
+&& mv terraform /usr/local/bin/ \
 && curl -# -LO https://github.com/gruntwork-io/terragrunt/releases/download/v0.46.3/terragrunt_linux_amd64 \
 && mv terragrunt_linux_amd64 terragrunt \
 && chmod +x terragrunt \
-&& mv terragrunt /usr/local/bin \
-&& curl -LO -# https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb \
+&& mv terragrunt /usr/local/bin/ \
+&& curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb \
 && dpkg -i ripgrep_13.0.0_amd64.deb \
 && pip3 install boto3 \
-&& apt install -y python3-boto3 \
-&& apt install -y python3-botocore \
+&& apt install -y python3-boto3 python3-botocore \
 && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
 && unzip awscliv2.zip \
-&& sudo ./aws/install --update \
+&& ./aws/install --update \
 && curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 \
 && chmod +x /usr/local/bin/argocd \
-&& cd /root \ 
 && rm -rf *
 ```
