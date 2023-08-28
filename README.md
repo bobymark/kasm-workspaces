@@ -138,7 +138,7 @@ docker run --name sandbox --shm-size=4096m -v $PWD:/mnt -w /mnt -p 6901:6901 -e 
 - Windows
 - https://hub.docker.com/r/kasmweb/ubuntu-jammy-desktop
 ```bash
-docker run --name sandbox-kind --shm-size=4096m -v /var/run/docker.sock:/var/run/docker.sock -v "c:/users/Muhammad Asim/Desktop/sandbox:/mnt" -w /mnt -p 6901:6901 -e VNC_PW=password -id kasmweb/ubuntu-jammy-desktop:latest
+docker run --name sandbox-kind --shm-size=4096m -v /var/run/docker.sock:/var/run/docker.sock -v "c:/users/Muhammad Asim/Desktop/sandbox:/mnt" -w /mnt -p 6901:6901 -e VNC_PW=password -id kasmweb/ubuntu-jammy-desktop:1.12.0-rolling
 ```
 
 ### DevOps tools
