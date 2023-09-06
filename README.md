@@ -174,5 +174,9 @@ apt update -y \
 && ./aws/install --update \
 && curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 \
 && chmod +x /usr/local/bin/argocd \
+&& curl -LO -# https://github.com/derailed/k9s/releases/download/v0.27.4/k9s_Linux_amd64.tar.gz \
+&& tar -xzvf k9s_Linux_amd64.tar.gz \
+&& chmod +x k9s \
+&& mv k9s /usr/local/bin/ \
 && rm -rf *
 ```
