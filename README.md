@@ -69,6 +69,16 @@ docker run -id \
   -v ${PWD}:/mnt \
   lscr.io/linuxserver/kasm:arm64v8-latest
 ```
+```bash
+docker run -id \
+  --name=kasm-desktop \
+  --privileged \
+  -e KASM_PORT=443 \
+  -p 3000:3000 \
+  -p 443:443 \
+  -v ${PWD}:/mnt \
+lscr.io/linuxserver/kasm:arm64v8-1.14.0-develop
+```
 
 - kasm-user settings to add this user in sudoers groups https://kasmweb.com/docs/latest/how_to/running_as_root.html
 
