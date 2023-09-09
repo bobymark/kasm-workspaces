@@ -69,7 +69,7 @@ docker run -id \
   -v ${PWD}:/mnt \
   lscr.io/linuxserver/kasm:arm64v8-latest
 ```
--- https://hub.docker.com/r/linuxserver/kasm/tags
+- https://hub.docker.com/r/linuxserver/kasm/tags
 
 ```bash
 docker run -id \
