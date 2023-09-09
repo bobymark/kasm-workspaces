@@ -69,6 +69,8 @@ docker run -id \
   -v ${PWD}:/mnt \
   lscr.io/linuxserver/kasm:arm64v8-latest
 ```
+-- https://hub.docker.com/r/linuxserver/kasm/tags
+
 ```bash
 docker run -id \
   --name=kasm-desktop \
@@ -112,6 +114,17 @@ docker run -id \
   -p 8443:8443 \
   -v ${PWD}:/mnt \
   lscr.io/linuxserver/kasm:amd64-latest
+```
+- https://hub.docker.com/r/linuxserver/kasm/tags
+```bash
+docker run -id \
+  --name=kasm \
+  --privileged \
+  -e KASM_PORT=8443 \
+  -p 3001:3000 \
+  -p 8443:8443 \
+  -v ${PWD}:/mnt \
+  lscr.io/linuxserver/kasm:amd64-develop
 ```
 
 - Windows
