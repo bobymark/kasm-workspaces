@@ -110,16 +110,22 @@ docker run -id \
   --name=kasm \
   --privileged \
   -e KASM_PORT=8443 \
+  --shm-size=8192m \
   -p 3001:3000 \
   -p 8443:8443 \
   -v ${PWD}:/mnt \
   lscr.io/linuxserver/kasm:amd64-latest
+```
+- Windows Power Shell
+```bash
+docker run -id --name=kasm --privileged -e KASM_PORT=8443 --shm-size=8192m -p 3001:3000 -p 8443:8443 -v ${PWD}:/mnt lscr.io/linuxserver/kasm:amd64-latest
 ```
 - https://hub.docker.com/r/linuxserver/kasm/tags
 ```bash
 docker run -id \
   --name=kasm \
   --privileged \
+  --shm-size=8192m \
   -e KASM_PORT=8443 \
   -p 3001:3000 \
   -p 8443:8443 \
