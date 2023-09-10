@@ -279,7 +279,7 @@ mv ./kind /usr/local/bin
 #############
 # Kind Config
 #############
-cat << EOF > kind1-config.yaml
+cat << EOF > kind-config.yaml
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
@@ -287,17 +287,6 @@ networking:
  apiServerPort: 8443
 EOF
 
-
-#############
-# Kind Config
-#############
-cat << EOF > kind2-config.yaml
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-networking:
- apiServerAddress: 0.0.0.0
- apiServerPort: 8444
-EOF
   
 # kind create --name cloudgeeks cluster --config kind-config.yaml --image kindest/node:v1.21.10
   
