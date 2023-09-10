@@ -63,6 +63,7 @@ passwd kasm-user
 docker run -id \
   --name=kasm \
   --privileged \
+  --shm-size=8192m \
   -e KASM_PORT=443 \
   -p 3000:3000 \
   -p 443:443 \
@@ -74,6 +75,7 @@ docker run -id \
 ```bash
 docker run -id \
   --name=kasm-desktop \
+  --shm-size=8192m \
   --privileged \
   -e KASM_PORT=443 \
   -p 3000:3000 \
@@ -109,6 +111,7 @@ lscr.io/linuxserver/kasm:arm64v8-1.14.0-develop
 docker run -id \
   --name=kasm \
   --privileged \
+  --shm-size=8192m \
   -e KASM_PORT=8443 \
   --shm-size=8192m \
   -p 3001:3000 \
@@ -116,7 +119,7 @@ docker run -id \
   -v ${PWD}:/mnt \
   lscr.io/linuxserver/kasm:amd64-latest
 ```
-- Windows Power Shell
+- Windows Power Shell --shm-size=8192m
 ```bash
 docker run -id --name=kasm --privileged -e KASM_PORT=8443 --shm-size=8192m -p 3001:3000 -p 8443:8443 -v ${PWD}:/mnt lscr.io/linuxserver/kasm:amd64-latest
 ```
