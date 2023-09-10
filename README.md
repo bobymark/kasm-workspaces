@@ -307,7 +307,7 @@ EOF
   
 
   
-kind create --name cloudgeeks-local cluster --config kind1-config.yaml --image kindest/node:v1.25.9
+kind create --name cloudgeeks-local cluster --config kind-config.yaml --image kindest/node:v1.25.9
  
 export KUBECONFIG=".kube/config"
  
