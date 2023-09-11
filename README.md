@@ -223,7 +223,7 @@ rm -rf /var/tmp/* \
 && rm -rf *
 ```
 
-- kubernetes inside single container
+- kubernetes inside single container (Note: below successful testing is done Powerful MAC2)
 ```bash
 #!/bin/bash
 # Purpose: Kubernetes Cluster
