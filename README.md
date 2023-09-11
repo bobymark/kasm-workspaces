@@ -176,6 +176,12 @@ docker run --name sand-box --shm-size=4096m -v $PWD:/mnt -w /mnt -p 6902:6901 -e
 docker run --name sand-box --shm-size=4096m -v /var/run/docker.sock:/var/run/docker.sock -v "c:/users/Muhammad Asim/Desktop/sandbox:/mnt" -w /mnt -p 6901:6901 -e VNC_PW=password -id kasmweb/ubuntu-jammy-desktop:1.14.0-rolling
 ```
 
+- AMD on MAC
+```bash
+docker pull --platform linux/amd64 python:slim
+docker run --name sandbox --platform linux/amd64 -w /mnt -v ${PWD}:/mnt -id python:slim
+```
+
 ### DevOps tools
 ```bash
 apt update -y \
