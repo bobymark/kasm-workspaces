@@ -177,8 +177,21 @@ docker run --name sand-box --shm-size=4096m -v "c:/users/Muhammad Asim/Desktop/s
 
 - Ubuntu GUI (Windows)
 - https://hub.docker.com/r/kasmweb/ubuntu-jammy-desktop
+  
 ```bash
-docker run --name sand-box --shm-size=4096m -v /var/run/docker.sock:/var/run/docker.sock -v "c:/users/Muhammad Asim/Desktop/sandbox:/mnt" -w /mnt -p 6901:6901 -e VNC_PW=password -id kasmweb/ubuntu-jammy-desktop:1.14.0-rolling
+docker run --name sand-box --cpus=6 --shm-size=4096m -v /var/run/docker.sock:/var/run/docker.sock -v "c:/users/Muhammad Asim/Desktop/sandbox:/mnt" -w /mnt -p 6901:6901 -e VNC_PW=password -id kasmweb/ubuntu-jammy-desktop:1.14.0-rolling
+```
+- .wslconfig
+```bash
+[wsl2]
+memory=8GB
+swap=2GB
+processors=6
+nestedVirtualization=true
+```
+```bash
+wsl --shutdown
+docker info | grep "CPUs"
 ```
 
 - AMD on MAC
