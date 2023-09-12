@@ -175,7 +175,7 @@ docker run --name sand-box --shm-size=4096m -v $PWD:/mnt -w /mnt -p 6902:6901 -e
 docker run --name sand-box --shm-size=4096m -v "c:/users/Muhammad Asim/Desktop/sandbox:/mnt" -v /var/run/docker.sock:/var/run/docker.sock -w /mnt -p 6902:6901 -e VNC_PW=password -id kasmweb/ubuntu-jammy-dind:1.14.0-rolling
 ```
 
-- Windows
+- Ubuntu GUI (Windows)
 - https://hub.docker.com/r/kasmweb/ubuntu-jammy-desktop
 ```bash
 docker run --name sand-box --shm-size=4096m -v /var/run/docker.sock:/var/run/docker.sock -v "c:/users/Muhammad Asim/Desktop/sandbox:/mnt" -w /mnt -p 6901:6901 -e VNC_PW=password -id kasmweb/ubuntu-jammy-desktop:1.14.0-rolling
