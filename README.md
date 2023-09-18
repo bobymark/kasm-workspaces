@@ -213,7 +213,7 @@ apt update -y \
 && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
 && chmod 700 get_helm.sh \
 && ./get_helm.sh \
-&& curl -# -LO https://github.com/weaveworks/eksctl/releases/download/v0.94.0-rc.0/eksctl_Linux_amd64.tar.gz \
+&& curl -# -LO https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz \
 && tar -xzvf eksctl_Linux_amd64.tar.gz \
 && mv eksctl /usr/local/bin/ \
 && curl -# -LO https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_amd64.zip \
@@ -236,17 +236,18 @@ apt update -y \
 && tar -xzvf k9s_Linux_amd64.tar.gz \
 && chmod +x k9s \
 && cp -rv k9s /usr/local/bin/ \
-&& apt-get update -y && \
-&& apt-get install -y apt-transport-https ca-certificates gnupg curl sudo zip && \
-&& echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
-&& curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
-&& apt-get update -y && \
-&& apt-get install -y google-cloud-sdk && \
-&& apt-get clean && \
-&& rm -rf /var/lib/apt/lists/* && \
-&& rm -rf /tmp/* && \
+&& apt-get update -y \
+&& apt-get install -y apt-transport-https ca-certificates gnupg curl sudo zip \
+&& echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
+&& curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - \
+&& apt-get update -y \
+&& apt-get install -y google-cloud-sdk \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/* \
+&& rm -rf /tmp/* \
 && rm -rf /var/tmp/* \
 && rm -rf *
+
 # End
 ```
 
