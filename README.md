@@ -242,6 +242,7 @@ apt update -y \
 && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - \
 && apt-get update -y \
 && apt-get install -y google-cloud-sdk \
+&& apt-get install google-cloud-sdk-gke-gcloud-auth-plugin \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
 && rm -rf /tmp/* \
