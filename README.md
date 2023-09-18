@@ -202,6 +202,8 @@ docker run --name sandbox --platform linux/amd64 -w /mnt -v ${PWD}:/mnt -id pyth
 
 ### DevOps tools
 ```bash
+#!/bin/bash
+
 apt update -y \
 && apt install -y ansible tmux curl zip unzip jq telnet netcat-traditional net-tools dos2unix git vim nano iputils-ping golang-github-packer-community-winrmcp-dev python3-pip \
 && cd /root \
@@ -245,6 +247,7 @@ rm -rf /var/lib/apt/lists/* && \
 rm -rf /tmp/* && \
 rm -rf /var/tmp/* \
 && rm -rf *
+# End
 ```
 
 - kubernetes inside single container (Note: below successful testing is done Powerful MAC2)
