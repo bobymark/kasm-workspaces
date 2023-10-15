@@ -335,7 +335,7 @@ export KUBECONFIG=".kube/config"
   #End
 ```
 
-- docker dind
+- docker dind for MAC only (Use for Docker builds)
 ```bash
 docker run --name=docker --privileged -id docker:stable-dind
 ```
