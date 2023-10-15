@@ -345,4 +345,7 @@ docker run --name=docker --privileged -id docker:stable-dind
 docker run --name=podman --privileged --platform=linux/amd64 -w /mnt -id python:slim
 docker exec -it podman bash
 apt update -y && apt install -y podman curl nano vim
+
+Dockerfile
+FROM docker.io/nginx:latest
 ```
