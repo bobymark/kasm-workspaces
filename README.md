@@ -339,3 +339,10 @@ export KUBECONFIG=".kube/config"
 ```bash
 docker run --name=docker --privileged -id docker:stable-dind
 ```
+
+- Linux/Windows/MAC CI builds
+```bash
+docker run --name=podman --privileged --platform-linux/amd/64 -w /mnt -id python:slim
+docker exec -it podman bash
+apt update -y && apt install -y podman curl
+```
