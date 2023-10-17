@@ -369,7 +369,7 @@ CMD ["--tail-log"]
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ubuntu-sand-box
+  name: ubuntu-sand-box-desktop
   namespace: default
 spec:
   containers:
