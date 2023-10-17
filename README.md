@@ -335,11 +335,6 @@ export KUBECONFIG=".kube/config"
   #End
 ```
 
-- docker dind for MAC only (Use for Docker builds)
-```bash
-docker run --name=docker --privileged -id docker:stable-dind
-```
-
 - Linux/Windows/MAC CI builds
 ```bash
 docker run --name=podman --privileged --platform=linux/amd64 -w /mnt -id python:slim
