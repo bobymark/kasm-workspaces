@@ -406,7 +406,7 @@ mongodb-compass
 
 - Port Forward
 ```bash
-kubectl -n default port-forward pod/ubuntu-sand-box --address 0.0.0.0 6900:6901
+kubectl -n default port-forward pod/ubuntu-sand-box-desktop --address 0.0.0.0 6900:6901
 ```
 
 - DNS Lookup
