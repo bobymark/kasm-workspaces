@@ -344,3 +344,73 @@ apt update -y && apt install -y podman curl nano vim
 Dockerfile
 FROM docker.io/nginx:latest
 ```
+
+- Example Use Case
+- Atlas Mongo Free https://www.mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster/
+
+- Dockerfile https://kasmweb.com/docs/latest/how_to/running_as_root.html
+```bash
+FROM kasmweb/ubuntu-jammy-desktop:1.14.0-rolling
+
+USER root
+RUN apt-get update \
+    && apt-get install -y sudo \
+    && echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers \
+    && rm -rf /var/lib/apt/list/*
+
+USER 1000
+EXPOSE 6901
+
+CMD ["--tail-log"]
+```
+
+- ubuntu-desktop.yaml
+```bash
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-sand-box
+  namespace: default
+spec:
+  containers:
+    - name: ubuntu-sand-box-desktop
+      image: quickbooks2018/ubuntu-desktop:kasm
+      env:
+        - name: VNC_PW
+          value: "password"
+      resources:
+        limits:
+          memory: "2Gi"
+        requests:
+          memory: "2Gi"
+      volumeMounts:
+        - mountPath: /dev/shm
+          name: dshm
+  #    securityContext:
+  #      runAsUser: 0
+  volumes:
+    - name: dshm
+      emptyDir:
+        medium: Memory
+        sizeLimit: "2048Mi"
+```
+
+- Mongo compass package (take a shell)
+```bash
+sudo -i
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.40.3_amd64.deb
+sudo dpkg -i mongodb-compass_1.40.3_amd64.deb
+sudo apt-get install -f
+mongodb-compass
+```
+
+- Port Forward
+```bash
+kubectl -n default port-forward pod/ubuntu-sand-box --address 0.0.0.0 6900:6901
+```
+
+- DNS Lookup
+```bash
+apt update -y && apt install -y dnsutils iputils-ping
+dig SRV _mongodb._tcp.cluster-devops-0.rzkdltt.mongodb.net
+```
