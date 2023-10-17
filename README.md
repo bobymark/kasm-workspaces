@@ -397,7 +397,6 @@ spec:
 
 - Mongo compass package (take a shell)
 ```bash
-sudo -i
 wget https://downloads.mongodb.com/compass/mongodb-compass_1.40.3_amd64.deb
 sudo dpkg -i mongodb-compass_1.40.3_amd64.deb
 sudo apt-get install -f
