@@ -378,6 +378,9 @@ spec:
       env:
         - name: VNC_PW
           value: "password"
+      ports:
+        - containerPort: 6901
+          name: vnc
       resources:
         limits:
           memory: "4Gi"
