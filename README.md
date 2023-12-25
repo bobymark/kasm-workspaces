@@ -384,13 +384,13 @@ spec:
       resources:
         limits:
           memory: "4Gi"
+          cpu: "2"  # Specifies the maximum amount of CPU allowed
         requests:
           memory: "4Gi"
+          cpu: "1"  # Specifies the minimum amount of CPU required
       volumeMounts:
         - mountPath: /dev/shm
           name: dshm
-  #    securityContext:
-  #      runAsUser: 0
   volumes:
     - name: dshm
       emptyDir:
