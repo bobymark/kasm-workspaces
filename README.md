@@ -380,9 +380,9 @@ spec:
           value: "password"
       resources:
         limits:
-          memory: "2Gi"
+          memory: "4Gi"
         requests:
-          memory: "2Gi"
+          memory: "4Gi"
       volumeMounts:
         - mountPath: /dev/shm
           name: dshm
@@ -392,7 +392,7 @@ spec:
     - name: dshm
       emptyDir:
         medium: Memory
-        sizeLimit: "2048Mi"
+        sizeLimit: "4096Mi"
 ```
 
 - Mongo compass package (take a shell)
