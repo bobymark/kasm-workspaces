@@ -413,6 +413,14 @@ kubectl -n default port-forward pod/ubuntu-sand-box-desktop --address 0.0.0.0 69
 
 - DNS Lookup
 ```bash
-apt update -y && apt install -y dnsutils iputils-ping
+apt update -y && apt install -y dnsutils iputilsdocker network connect kind k8s-sandbox-ping
 dig SRV _mongodb._tcp.cluster-devops-0.rzkdltt.mongodb.net
 ```
+
+- Attach your container to other custom network for dns resolution
+```bash
+docker network ls
+docker network connect kind k8s-sandbox
+```
+- Note: In above command kind is network name and k8s-sandbox which is container name.
+
