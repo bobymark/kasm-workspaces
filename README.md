@@ -426,7 +426,7 @@ docker network connect kind k8s-sandbox
 
 ### Package Manager Nix
 - https://nix.dev/
-- 
+  
 - https://nix.dev/install-nix
 
 - https://search.nixos.org/packages?query=ping
