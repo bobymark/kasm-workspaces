@@ -424,3 +424,15 @@ docker network connect kind k8s-sandbox
 ```
 - Note: In above command kind is network name and k8s-sandbox which is container name.
 
+### Package Manager Nix
+- https://nix.dev/
+- 
+- https://nix.dev/install-nix
+
+- https://search.nixos.org/packages?query=ping
+
+- https://nix.dev/tutorials/#tutorials
+```bash
+nix-shell -p iputils
+nix-collect-garbage
+```
