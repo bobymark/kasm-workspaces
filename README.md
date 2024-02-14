@@ -436,3 +436,10 @@ docker network connect kind k8s-sandbox
 nix-shell -p iputils
 nix-collect-garbage
 ```
+
+- xz package
+```bash
+apt-get update && apt-get install -y xz-utils
+yum install -y xz
+apk add --no-cache xz
+```
