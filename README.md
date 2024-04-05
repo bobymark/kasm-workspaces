@@ -255,6 +255,12 @@ apt update -y \
 # End
 ```
 
+- sdk permissions fixed
+```bash
+sudo chown -R kasm-user:kasm-user /home/kasm-user/.config/gcloud
+chmod -R 700 /home/kasm-user/.config/gcloud
+```
+
 - kubernetes inside single container (Note: below successful testing is done Powerful MAC2)
 ```bash
 #!/bin/bash
