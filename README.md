@@ -251,6 +251,7 @@ apt update -y \
 && curl -o oh-my-zsh-ubuntu.sh https://raw.githubusercontent.com/quickbooks2018/aws/master/oh-my-zsh-ubuntu.sh \
 && chmod +x oh-my-zsh-ubuntu.sh \
 && ./oh-my-zsh-ubuntu.sh \
+&& curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash \
 && rm -rf *
 # End
 ```
