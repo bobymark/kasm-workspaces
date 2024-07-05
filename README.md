@@ -256,12 +256,16 @@ apt update -y \
 # End
 ```
 
-- sdk permissions fixed
+- sdk permissions fixed for GCP
 ```bash
-sudo chown -R kasm-user:kasm-user /home/kasm-user/.config/gcloud
+chown -R kasm-user:kasm-user /home/kasm-user/.config/gcloud
 chmod -R 700 /home/kasm-user/.config/gcloud
 ```
-
+- sdk permissions fixed for AZURE
+```bash
+chown kasm-user:kasm-user /home/kasm-user/.azure
+chmod 766 /home/kasm-user/.azure
+```
 - kubernetes inside single container (Note: below successful testing is done Powerful MAC2)
 ```bash
 #!/bin/bash
